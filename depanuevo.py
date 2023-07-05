@@ -42,7 +42,10 @@ def veredificio():
     printam("\t    A   B   C   D")
     for piso in range(10,0,-1): # itera desde 10 hasta 1 en orden descendente, iterando sobre cada piso del edificio.
         nro_piso-=1 #Resta 1 a nro_piso en cada iteración para actualizar el número de piso que se muestra.
-        print(f"Nro Piso:{nro_piso}",end=" ") #Imprime piso actual / End añade espacio despues del cuadrado
+        if piso == 10:
+            print(f"Nro Piso:{nro_piso} ", end="")
+        else:
+            print(f"Nro Piso :{nro_piso}", end=" ")
         for letra in range (4):#: itera desde 0 hasta 3, representa A, B, C y D
             if edificio[piso-1,letra]==None: #En edificio [Piso-1 (porque parte del )]
                 print("🟩",end=" ")
