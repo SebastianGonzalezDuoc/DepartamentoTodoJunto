@@ -1,10 +1,13 @@
 import numpy as np
+import os
+import msvcrt
 
 edificio=np.empty((10,4),object)
 dueños={} #para almacenar información sobre los dueños de los departamentos.
 ganancias=0
 print(edificio)
 while True:
+    print("Presione una tecla para continuar:")
     print("""
     1) Ver edificio
     2) Comprar departamento
@@ -21,7 +24,7 @@ while True:
             nro_piso-=1 #Resta 1 a nro_piso en cada iteración para actualizar el número de piso que se muestra.
             print(f"Nro Piso:{nro_piso}",end=" ") #Imprime piso actual / End añade espacio despues del cuadrado
             for letra in range (4):#: itera desde 0 hasta 3, representa A, B, C y D
-                if edificio[piso-1,letra]==None:
+                if edificio[piso-1,letra]==None: #En edificio [Piso-1 (porque parte del )]
                     print("🟩",end=" ")
                 else:
                     print("🟥",end=" ")
@@ -33,8 +36,8 @@ while True:
         print("Vendido=🟥")
     elif opcion==2:
         print("Comprar departamento")
-        piso=int(input("Ingrese el numero de piso:"))
-        if piso>=1 and piso<=10:
+        piso=int(input("Ingrese el numero de piso:")) #Guardo piso (1-10)
+        if piso>=1 and piso<=10: 
             letra=str(input("Ingrese el letra de depto A-B-C-D:")).upper()
             if len(letra)==1:
                 if letra is "A" or "B" or "C" or "D":
@@ -106,3 +109,4 @@ while True:
         break
     else:
         print("Has ingresado una opcion no valida")
+
