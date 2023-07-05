@@ -7,7 +7,10 @@ dueños={} #para almacenar información sobre los dueños de los departamentos.
 ganancias=0
 print(edificio)
 while True:
-    print("Presione una tecla para continuar:")
+    print("<<Presione una tecla para continuar>>")
+    msvcrt.getch()  # Añade los paréntesis para invocar la función
+    os.system("cls")  # Reemplaza "clear" con el comando apropiado para limpiar la pantalla según tu sistema operativo
+
     print("""
     1) Ver edificio
     2) Comprar departamento
